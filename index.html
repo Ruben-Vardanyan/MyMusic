@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MyMusic</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="main-box">
+		<div class="blur-background"></div>
+		<div class="audio-card">
+			<img class="track-img" src="https://i.scdn.co/image/ab67616d0000b2731440ffaa43c53d65719e0150">
+			<div class="details"> 
+				<h1 class="title">Murder In My Mind</h1>
+				<h3 class="author">KORDHELL</h3>
+			</div>
+			<div class="details">
+				<div class="audio-time">
+					<span class="progressing">00:00</span>
+					<span class="end-time">03:25</span>
+				</div>
+				<input type="range" id="seek-slider" max="100" value="0" name=""  onchange="seekTo()">
+			</div>
+
+
+			
+
+
+			<div class="details row">
+				<button class="btn prev" onclick="nextTrack()"><i class="fa-solid fa-backward-step"></i></button>
+				<button class="stop-button" onclick="playpauseTrack()"><i class="fa-solid fa-play"></i></button>
+				<button class="btn next" onclick="prevTrack()"><i class="fa-solid fa-forward-step"></i></button>
+			</div>
+		</div>
+		
+	</div>
+	<!-- <div class="circle">
+		
+	</div> -->
+	<script type="text/javascript" src="ls.js"></script>
+</body>
+</html>

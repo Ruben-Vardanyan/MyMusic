@@ -1,0 +1,215 @@
+html{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	 height: -webkit-fill-available;
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #252525;
+	-webkit-overflow-scrolling: touch;
+	font-family: cursive;
+	/*  */
+}
+div{
+	box-sizing: border-box;
+}
+:root{
+	--card-height: 80vh;
+  	--card-width: calc(var(--card-height) / 1.5);
+  	--darker: #274f69;
+  	--dark: #69265c;
+  	--passed: #ee3190;
+  	--progress: #ffffff;
+}
+.main-box{
+	position: relative;
+	width:  var(--card-width);
+	height: var(--card-height);
+	background: #000;
+}
+.blur-background{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background: url(https://i.scdn.co/image/ab67616d0000b2731440ffaa43c53d65719e0150) no-repeat center / cover;
+	filter: blur(10px);
+	opacity: 0.5;
+}
+.audio-card{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.track-img{
+	width: 300px;
+	height: 300px;
+	border-radius: 45px;
+	object-fit: cover;
+	/* box-shadow: 0px 0px 25px  rgba(255,255,255,0.8); */
+	box-shadow: 0px 0px 25px 5px  rgba(0,0,0,0.9),
+	 0px 0px 10px  rgba(255,255,255,1);
+}
+.details{
+	text-align: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.title{
+	margin: 0;
+	font-size: 25px;
+	color: #E2DFD2;
+	margin-bottom: 10px;
+}
+.author{
+	margin: 0;
+	font-size: 15px;
+	color: gray;
+}
+
+.audio-time{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	color: var(--progress);
+	margin-bottom: 5px;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+.progress{
+	width: 80%;
+	height: 5px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px;
+
+	
+}
+.pin{
+	width: 0;
+	height: 100%;
+	background: var(--progress);
+	border-radius: 5px;
+	position: relative;
+}
+.pin::after{
+	content: "";
+	width: 10px;
+	height: 10px;
+	background: var(--progress);
+	position: absolute;
+	right: -5px;
+	top: 50%;
+	transform: translate(-2.5px,-50%);
+	border-radius: 50%;
+}
+#seek-slider{
+	width: 80%;
+	height: 6px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px;
+	outline: none;
+	-webkit-appearance: none;
+
+}
+input[type="range"]::-webkit-slider-thumb {
+
+  position: relative;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  box-shadow: 0px 0px 10px  rgba(255,255,255,0.8), inset 0 0 10px var(--passed);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: var(--darker);
+  cursor: pointer;
+  box-shadow: ;
+}
+input[type="range"]:active::-webkit-slider-thumb {
+	-webkit-appearance: none;
+  transform: scale(1.2);
+  background: blue;
+  transition:  ease-out;
+
+
+}
+
+
+
+
+.stop-button{
+	display: block;
+	width: 70px;
+	height: 70px;
+	border: 1px solid rgba(255,255,255,0.5);
+	position: relative;
+	border-radius: 50%;
+	padding: 0;
+	background: transparent;
+	color: var(--progress);
+	font-size: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 15px  rgba(255,255,255,0.8), inset 0 0 15px var(--passed);
+}
+.stop-button > .fa-play {
+	margin-left: 4px;
+}
+.row{
+	margin-top: 20px;
+	flex-direction: row;
+	gap: 20px;
+}
+.btn{
+	display: block;
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgba(255,255,255,0.5);
+	position: relative;
+	border-radius: 50%;
+	padding: 0;
+	background: transparent;
+	color: var(--progress);
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 10px  rgba(255,255,255,0.8), inset 0 0 10px var(--passed);
+}
+
+/*phone 180-767px*/
+@media only screen and (min-device-width : 180px) and (max-device-width :  767px) and (orientation : portrait) { 
+    .calculator{
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        padding: 20px;
+        margin: 0 0;
+        background: #131417;
+    }
+	.main-box{
+		position: relative;
+		width: 100vw;
+        height: 100%;
+	}
+}
